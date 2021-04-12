@@ -1,0 +1,59 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+
+
+}
+
+.container-fluid img{
+
+width: 150px;
+height: 150px;
+
+
+}
+
+.container-fluid img #hola{
+
+width: 300px;
+height: 150px;
+
+
+}
+
+div h1{
+
+text-align: left;
+font-size: 23px;
+font-weight: 40px;
+margin-bottom: 20px;
+padding-top: 5%;
+}
+
+
+
+nav ul{
+	padding:0;
+	
+
+}
+nav ul li{
+	display: inline;
+
+}
+
+nav ul li a{
+	font-family: Arial;
+	font-size: 20px;
+	text-decoration: none;
+	float: left;
+	padding: 15px;
+	
+	
+
+	color: #fff;
+}
+
+
+}
