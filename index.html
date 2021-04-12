@@ -67,10 +67,118 @@
 	<div class="row" id="imagen">
 		<div class="col-3 text-center">
 			
-    			
+    			<img src =  "http://www.elmundo.com/images/ediciones/Viernes_28_2_2014/Viernes_28_2_2014@@Elecciones-escolares-600.jpg " alt = "" class = " img-fluid mx-auto d-block " >
+
     	</div>
     </div>
 		</div>
+<aside>
+	<table id="deportes"></table>
+		<tr>
+			<td>ID</td>
+			<td>Titulo</td>
+			<td>Categoria</td>
+			
+		</tr>
+<section><button id="deportes">Deportes</button></section>
+
+</aside>
+		<section>
+			<table id="tabla">
+				<tr>
+			<td>Titulo</td>
+			<td>Categoria</td>
+			<td>Fecha</td>
+			<td>Descripcion</td>
+		</tr>
+			</table>
+</section>
+<section><button id="boton">Todas las noticias</button></section>
+		<script type="text/javascript">
+			
+			function cargarTabla(json){
+
+	var url = "http://demo6497253.mockable.io/noticias";
+
+	fetch  (url)
+	    .then(response => response.json())
+		.then(data => generarTabla(data))
+	.catch(error => {});
+
+
+	}
+
+
+function generarTabla(json){
+
+	const tabla = document.getElementById("tabla");
+
+	json.noticias.forEach ( noticia => {
+
+	const tr = document.createElement('tr');
+	const tdTitulo = document.createElement('td');
+	     tdTitulo.textContent = noticia.titulo;
+	     tr.appendChild(tdTitulo);
+	     const tdCategoria = document.createElement('td');
+	     tdCategoria.textContent = noticia.categoria;
+	     tr.appendChild(tdCategoria);
+	     const tdFecha = document.createElement('td');
+	     tdFecha.textContent = noticia.fecha;
+	     tr.appendChild(tdFecha);
+         const tdDescripcion = document.createElement('td');
+	     tdDescripcion.textContent =  noticia.descripcion;
+	     tr.appendChild(tdDescripcion);
+	     
+	     tabla.tBodies[0].appendChild(tr);
+	 });
+	
+}
+
+document.getElementById("boton").onclick = cargarTabla;
+		</script>
+
+		<script type="text/javascript">
+			
+			function cargarTabla2(json){
+
+	var url = "http://demo6497253.mockable.io/categoria/deporte";
+
+	fetch  (url)
+	    .then(response => response.json())
+		.then(data => generarTabla2(data))
+	.catch(error => {});
+
+
+	}
+
+
+function generarTabla2(json){
+
+	const deportes = document.getElementById("deportes");
+
+	json.deporte.forEach ( depor => {
+
+	const tr = document.createElement('tr');
+	const tdID = document.createElement('td');
+	     tdID.textContent = depor.id;
+	     tr.appendChild(tdID);
+	     const tdTitulo = document.createElement('td');
+	     tdTitulo.textContent = depor.titulo;
+	     tr.appendChild(tdTitulo);
+	     const tdCategoria = document.createElement('td');
+	     tdCategoria.textContent = depor.categoria;
+	     tr.appendChild(tdCategoria);
+         
+	     
+	     deportes.tBodies[0].appendChild(tr);
+	 });
+	
+}
+
+document.getElementById("deportes").onclick = cargarTabla2;
+
+
+		</script>
 
  <footer class="page-footer font-small pt-4 mt-2" style="background-color: #FF0000">
 
